@@ -28,6 +28,8 @@ body {
   min-height: 100dvh;
 }
 
+$input-background-color: #f6f6f6;
+
 .footer__container {
   position: relative;
   height: 100dvh;
@@ -93,7 +95,10 @@ body {
   gap: 0.75rem;
 }
 .footer__fifthCol {
-  flex-basis: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .footer__logo__icon {
@@ -183,6 +188,58 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+.footer__form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.footer__input {
+  background-color: $input-background-color;
+  padding: 0.5rem 0.75rem;
+  border-radius: $sm-border-radius;
+  font-size: $md-font-size;
+  &::placeholder {
+    color: $gray-20;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 5.6rem */
+    letter-spacing: 0.00933rem;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.footer__input__name,
+.footer__input__message,
+.footer__input__message {
+  grid-column: span 2 / span 2;
+}
+
+.footer__input__email,
+.footer__input__phone {
+  grid-column: span 1 / span 1;
+}
+
+.footer__submit__btn {
+  background-color: $primary-70;
+  color: $root-white;
+  @include containedButton();
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 4.48rem */
+  letter-spacing: 0.075rem;
+  width: fit-content;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.footer__mail__icon {
+  width: 1rem;
+  height: 1rem;
 }
 
 // TODO: add alt for img
