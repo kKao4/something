@@ -154,7 +154,7 @@ $section-4-slide-btn-left-and-right: -3.75rem;
   @include forMobile() {
     width: 0.75rem;
     border-radius: $md-border-radius;
-    height: 0.325rem;
+    height: 0.275rem;
     margin-left: 2px !important;
     margin-right: 2px !important;
   }
@@ -163,7 +163,7 @@ $section-4-slide-btn-left-and-right: -3.75rem;
 .section__4__swiper-pagination-bullet-active {
   background-color: $primary-70;
   @include forMobile() {
-    width: 2.25rem;
+    width: 2.5rem;
     background-color: $yellow-200;
   }
 }

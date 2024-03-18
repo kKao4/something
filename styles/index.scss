@@ -28,6 +28,108 @@ body {
   min-height: 100dvh;
 }
 
+.footer__container {
+  position: relative;
+  height: 100dvh;
+  background-image: url("../assets/footer-bg-img.png"), url("../assets/footer-bg-deco-2.png"),
+    url("../assets/footer-bg-deco-1.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+}
+
+.footer__content {
+  position: absolute;
+  height: 50%;
+  align-items: flex-end;
+  background-color: $root-white;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.footer__content__container {
+  @include flexRowContainer();
+  padding: 4rem 0;
+  width: $container-width-desktop;
+  margin: auto;
+  @include forMobile() {
+    width: $container-width-mobile;
+  }
+}
+
+.footer__deco {
+  position: absolute;
+  top: 50.2%;
+  left: 0;
+  transform: translateY(-100%);
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer__firstCol {
+  flex-basis: 18%;
+  display: flex;
+  flex-direction: column;
+}
+.footer__secondCol {
+  flex-basis: 24%;
+}
+.footer__thirdCol {
+  flex-basis: 13%;
+}
+.footer__fourthCol {
+  flex-basis: 17%;
+}
+.footer__fifthCol {
+  flex-basis: auto;
+}
+
+.footer__logo__icon {
+  margin-bottom: 1.5rem;
+}
+
+.footer__circle__link__container {
+  @include flexRowContainer();
+  gap: 0.5rem;
+  width: fit-content;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer__circle__link {
+  @include flexRowContainer();
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background-color: $orange-700;
+}
+
+.footer__logo__icon {
+  width: 9.5rem;
+  height: 9.5rem;
+}
+
+.footer__facebook__icon,
+.footer__youtube__icon,
+.footer__tiktok__icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.footer__payment__method__container {
+  @include flexRowContainer();
+  margin-left: 1.75rem;
+}
+
+.footer__visa__icon,
+.footer__masterCard__icon {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
 // TODO: add alt for img
 // TODO: html sematic refactoring
 // TODO: flex change gap -> margin
