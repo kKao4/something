@@ -1308,28 +1308,6 @@ video {
   }
 }
 
-@font-face {
-  font-family: "Heavitas";
-  src: url("../assets/font/Heavitas.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-* {
-  box-sizing: border-box;
-  font-size: 1vw;
-  font-family: "Poppins", sans-serif;
-  color: #262626;
-}
-
-@media (max-width: 768px) {
-  * {
-    font-size: 4.267vw;
-  }
-}
-body {
-  min-height: 100dvh;
-}
-
 .section__4 {
   margin-top: 5rem;
 }
@@ -1793,4 +1771,26 @@ body {
   .section__4__viewAll__btn {
     font-size: 0.75rem;
   }
+}
+
+@font-face {
+  font-family: "Heavitas";
+  src: url("../assets/font/Heavitas.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+  font-size: 1vw;
+  font-family: "Poppins", sans-serif;
+  color: #262626;
+}
+
+@media (max-width: 768px) {
+  * {
+    font-size: 4.267vw;
+  }
+}
+body {
+  min-height: 100dvh;
 }/*# sourceMappingURL=index.css.map */
