@@ -2264,6 +2264,7 @@ body {
   padding: 4rem 0;
   width: 89%;
   margin: auto;
+  align-items: flex-start;
 }
 @media (max-width: 768px) {
   .footer__content__container {
@@ -2289,14 +2290,23 @@ body {
 
 .footer__secondCol {
   flex-basis: 24%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .footer__thirdCol {
   flex-basis: 13%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .footer__fourthCol {
   flex-basis: 17%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .footer__fifthCol {
@@ -2355,4 +2365,52 @@ body {
 .footer__masterCard__icon {
   width: 3.25rem;
   height: 3.25rem;
+}
+
+.footer__h2 {
+  font-size: 1rem;
+  font-family: "Heavitas", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 5.12rem */
+  letter-spacing: 0.05333rem;
+}
+
+.footer__contact__container,
+.footer__tour__container,
+.footer__hostel__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer__home__icon,
+.footer__world__icon,
+.footer__phone__icon,
+.footer__motorbike__icon,
+.footer__home__icon,
+.footer__email__icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.footer__phone__icon {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+.footer__contact__text *,
+.footer__contact__text,
+.footer__tour__text *,
+.footer__tour__text {
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 4.48rem */
+  letter-spacing: 0.03733rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }/*# sourceMappingURL=index.css.map */
