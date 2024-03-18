@@ -218,8 +218,9 @@ $section-3-slide-button-translateY: 100%;
   gap: 1.25rem;
   @include forMobile {
     flex-direction: column;
-    gap: 0.125rem;
+    gap: 0.25rem;
     margin: 0.75rem 0;
+    width: 100%
   }
 }
 

@@ -203,11 +203,11 @@ function init() {
 
   // section 4 slide
   const section5Swiper = new Swiper(".section__5__swiper", {
-    slidesPerView: 4,
+    slidesPerView: 1,
     speed: 500,
-    spaceBetween: 24,
+    spaceBetween: 12,
     autoHeight: true,
-    slidesPerGroup: 4,
+    slidesPerGroup: 1,
     loop: true,
     pagination: {
       el: ".section__5__swiper-pagination",
@@ -215,12 +215,13 @@ function init() {
       bulletClass: "section__5__swiper-pagination-bullet",
       bulletActiveClass: "section__5__swiper-pagination-bullet-active",
     },
-    // breakpoints: {
-    //   768: {
-    //     slidesPerView: 3,
-    //     slidesPerGroup: 3,
-    //   }
-    // }
+    breakpoints: {
+      768: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        spaceBetween: 24,
+      }
+    }
   });
   const section5PrevBtn = document.querySelector(".section__5__swiper__prev__btn");
   const section5NextBtn = document.querySelector(".section__5__swiper__next__btn");
