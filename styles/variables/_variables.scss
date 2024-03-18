@@ -1,29 +1,36 @@
-$root-black: #262626;
 $root-white: #fff;
-$root-orange: #e15214;
-$second-orange: #B34B1E;
-$third-orange: #E85925;
-$root-yellow: #b58e00;
-$second-yellow: #FFDA54;
-$third-yellow: #E8B600;
-$root-gray: #727272;
-$second-gray: #c5c5c5;
-$third-gray: #6a6a6a;
-$fourth-gray: #828282;
-$fifth-gray: #F8F8F8;
+$elevation-20: #f8f8f8;
+$primary-70: #b34b1e;
+$orange-600: #e85925;
+$orange-650: #e15214;
+$orange-700: #B5461D;
+$yellow-700: #b58e00;
+$yellow-200: #ffda54;
+$yellow-300: #e8b600;
+$gray-10: #c5c5c5;
+$gray-30: #828282;
+$gray-40: #6a6a6a;
+$gray-50: #727272;
+$grey-80: #262626;
+$border-dashed-gray: #ddd;
 $md-transition-duration: 0.5s;
 $sm-transition-duration: 0.4s;
-$root-shadow:
+$root-box-shadow:
   0px 0.25rem 2rem 0px rgba(0, 0, 0, 0.04),
   0px 0px 1.25rem 0px rgba(0, 0, 0, 0.06);
-$root-container-width-desktop: 89%;
-$root-container-width-mobile: 95%;
-$root-border-radius: 0.5rem;
-$sxl-font-size: 2rem;
+$second-box-shadow:
+  0px 0.2rem 1.5rem 0px rgba(92, 1, 1, 0.04),
+  0px 0px 0.75rem 0px rgba(181, 70, 29, 0.08);
+$container-width-desktop: 89%;
+$container-width-mobile: 95%;
+$md-border-radius: 0.5rem;
+$sm-border-radius: 0.25rem;
+$_4xl-font-size: 2rem;
+$_3xl-font-size: 1.75rem;
+$_2xl-font-size: 1.5rem;
 $xl-font-size: 1.25rem;
 $lg-font-size: 1rem;
 $md-font-size: 0.875rem;
 $sm-font-size: 0.75rem;
 $xsm-font-size: 0.675rem;
 $xs-font-size: 0.5rem;
-

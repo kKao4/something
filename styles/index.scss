@@ -14,7 +14,7 @@
   box-sizing: border-box;
   font-size: 1vw;
   font-family: "Poppins", sans-serif;
-  color: $root-black;
+  color: $grey-80;
 }
 
 @include forMobile {
@@ -25,6 +25,283 @@
 
 body {
   min-height: 100dvh;
+}
+
+$section-5-slide-content-space: 0.675rem;
+$section-5-margin-bottom-desktop: 1.25rem;
+$section-5-margin-bottom-mobile: 1rem;
+$section-5-slide-btn-left-and-right: -3.75rem;
+
+.section__5 {
+  @include sectionContainer();
+  @include forMobile() {
+    margin-top: 3.25rem;
+  }
+}
+
+.section__5__h2 {
+  color: $primary-70;
+  text-align: center;
+  font-family: Heavitas;
+  font-size: $md-font-size;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 10.24rem */
+  margin-bottom: 0.5rem;
+  @include forMobile() {
+    font-size: $sm-font-size;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.section__5__h1 {
+  color: $primary-70;
+  text-align: center;
+  font-family: Heavitas;
+  font-size: $_4xl-font-size;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 10.24rem */
+  margin-bottom: $section-5-margin-bottom-desktop;
+  @include forMobile() {
+    font-size: $_3xl-font-size;
+    margin-bottom: $section-5-margin-bottom-mobile;
+  }
+}
+
+.section__5__buttons__container {
+  @include flexRowContainer();
+  gap: 1rem;
+  margin: auto;
+  width: max-content;
+  margin-bottom: $section-5-margin-bottom-desktop;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @include forMobile {
+    width: $container-width-mobile;
+    margin-bottom: $section-5-margin-bottom-mobile;
+    gap: 0.5rem;
+  }
+}
+
+.section__5__contained__btn {
+  @include smContainedButton();
+}
+
+.section__5__contained__btn__active {
+  background-color: $yellow-200;
+}
+
+.section__5__swiper__container {
+  position: relative;
+  width: calc($container-width-desktop + 1rem);
+  margin: auto;
+  margin-bottom: $section-5-margin-bottom-desktop;
+  @include forMobile() {
+    width: calc($container-width-mobile + 1rem);
+    margin-bottom: $section-5-margin-bottom-mobile;
+  }
+}
+
+.section__5__swiper {
+  margin: auto;
+  overflow: clip;
+  padding: 0.5rem;
+}
+
+.section__5__swiper-slide {
+  padding: 0.75rem;
+  border-radius: $md-border-radius;
+  box-shadow: $second-box-shadow;
+  min-height: 25rem !important;
+  overflow: visible;
+  transition: background-color $sm-transition-duration ease-out;
+}
+
+// .section__5__swiper-slide:hover {
+//   background-color: $orange-600;
+// }
+
+.section__5__swiper-slide__image__container {
+  border-radius: $md-border-radius;
+  overflow: hidden;
+  position: relative;
+}
+
+.section__5__swiper-slide__image__location__container {
+  @include flexRowContainer();
+  gap: 0.25rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.2rem 0.375rem;
+  background-color: $root-white;
+  border-radius: 0.25rem;
+  cursor: default;
+}
+
+.section__5__swiper-slide__image__location {
+  font-size: $sm-font-size;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 3.84rem */
+  letter-spacing: 0.016rem;
+}
+
+.section__5__swiper-slide__title {
+  padding: $section-5-slide-content-space 0;
+  font-size: $md-font-size;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 4.16rem */
+  border-bottom: 0.125rem dashed $gray-10;
+  cursor: default;
+}
+
+.section__5__swiper-slide__information__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: $section-5-slide-content-space 0;
+  border-bottom: 0.125rem dashed $gray-10;
+}
+
+.section__5__swiper-slide__duration__container,
+.section__5__swiper-slide__groupSize__container,
+.section__5__swiper-slide__highlight__container {
+  cursor: default;
+  @include flexRowContainer();
+  gap: 0.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 3.84rem */
+  letter-spacing: 0.032rem;
+  font-size: $sm-font-size;
+  @include forMobile() {
+    font-size: $sm-font-size;
+  }
+}
+
+.section__5__swiper-slide__duration__icon,
+.section__5__swiper-slide__groupSize__icon,
+.section__5__swiper-slide__highlight__icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.section__5__swiper-slide__duration__text,
+.section__5__swiper-slide__groupSize__text,
+.section__5__swiper-slide__highlight__text {
+  font-size: $sm-font-size;
+  @include forMobile() {
+    font-size: $sm-font-size;
+  }
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 3.84rem */
+  letter-spacing: 0.032rem;
+  color: $orange-700;
+}
+
+.section__5__swiper-slide__price__container {
+  @include flexRowContainer();
+  width: 100%;
+  margin-top: $section-5-slide-content-space;
+  cursor: default;
+}
+
+.section__5__swiper-slide__bookNow__btn {
+  @include bookNowButton();
+  margin-left: auto;
+  background-color: $yellow-300;
+  color: $root-white;
+}
+
+.section__5__swiper-slide:hover .section__5__swiper-slide__bookNow__btn {
+  background-color: $primary-70;
+}
+
+.section__5__swiper-slide__price {
+  @include flexRowContainer();
+  gap: 0.5rem;
+}
+
+.section__5__swiper-slide__newPrice {
+  color: $orange-700;
+  font-size: $_2xl-font-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 7.68rem */
+}
+
+.section__5__swiper-slide__oldPrice {
+  font-size: $sm-font-size;
+  color: $gray-40;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.section__5__swiper__prev__btn {
+  position: absolute;
+  left: $section-5-slide-btn-left-and-right;
+  top: 50%;
+  transform: translateY(-50%);
+  @include forMobile() {
+    display: none;
+  }
+}
+
+.section__5__swiper__next__btn {
+  position: absolute;
+  right: $section-5-slide-btn-left-and-right;
+  top: 50%;
+  transform: translateY(-50%);
+  @include forMobile() {
+    display: none;
+  }
+}
+
+.section__5__swiper__prev__icon,
+.section__5__swiper__next__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.section__5__swiper__prev__icon,
+.section__5__swiper__next__icon {
+  transition: all $sm-transition-duration ease-out;
+  fill: $root-white;
+}
+
+.section__5__swiper__prev__btn:hover .section__5__swiper__prev__icon,
+.section__5__swiper__next__btn:hover .section__5__swiper__next__icon {
+  fill: $primary-70;
+  transform: scale(1.2);
+}
+
+.section__5__swiper-pagination {
+  margin-top: 1rem;
+  @include flexRowContainer();
+  justify-content: center;
+}
+
+// TODO: ask HUONG about this problem when use different class
+.section__5__swiper-pagination-bullet {
+  background-color: $gray-10;
+  transition: all $sm-transition-duration ease-out !important;
+  width: 0.75rem;
+  border-radius: $md-border-radius;
+  height: 0.275rem;
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+}
+
+.section__5__swiper-pagination-bullet-active {
+  width: 2.5rem;
+  background-color: $yellow-200;
 }
 
 // TODO: add alt for img

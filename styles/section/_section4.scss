@@ -1,3 +1,7 @@
+$section-4-margin-bottom-desktop: 1.25rem;
+$section-4-margin-bottom-mobile: 1rem;
+$section-4-slide-btn-left-and-right: -3.75rem;
+
 .section__4 {
   @include sectionContainer();
   @include forMobile() {
@@ -5,18 +9,18 @@
   }
 }
 
-.section__h1 {
-  color: $second-orange;
+.section__4__h1 {
+  color: $primary-70;
   text-align: center;
   font-family: Heavitas;
-  font-size: $sxl-font-size;
+  font-size: $_4xl-font-size;
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 10.24rem */
-  margin-bottom: 1.25rem;
+  margin-bottom: $section-4-margin-bottom-desktop;
   @include forMobile() {
-    font-size: $xl-font-size;
-    margin-bottom: 1rem;
+    font-size: $_3xl-font-size;
+    margin-bottom: $section-4-margin-bottom-mobile;
   }
 }
 
@@ -25,14 +29,14 @@
   gap: 1rem;
   margin: auto;
   width: max-content;
-  margin-bottom: 1.25rem;
+  margin-bottom: $section-4-margin-bottom-desktop;
   overflow-x: auto;
   &::-webkit-scrollbar {
     display: none;
   }
   @include forMobile {
-    width: $root-container-width-mobile;
-    margin-bottom: 1rem;
+    width: $container-width-mobile;
+    margin-bottom: $section-4-margin-bottom-mobile;
     gap: 0.5rem;
   }
 }
@@ -42,7 +46,7 @@
 }
 
 .section__4__contained__btn__active {
-  background-color: $second-yellow;
+  background-color: $yellow-200;
 }
 
 .section__4__slide__caption {
@@ -55,23 +59,24 @@
   font-weight: 400;
   line-height: 150%; /* 5.6rem */
   letter-spacing: 0.00933rem;
+  margin-bottom: $section-4-margin-bottom-desktop;
   @include forMobile {
-    width: $root-container-width-mobile;
+    width: $container-width-mobile;
     font-size: $sm-font-size;
+    margin-bottom: $section-4-margin-bottom-mobile;
   }
 }
 
 .section__4__swiper__container {
   position: relative;
-  width: $root-container-width-desktop;
+  width: $container-width-desktop;
   margin: auto;
   @include forMobile() {
-    width: $root-container-width-mobile;
+    width: $container-width-mobile;
   }
 }
 
 .section__4__swiper {
-  margin-top: 1.25rem !important;
   margin: auto;
 }
 
@@ -79,7 +84,7 @@
   height: 17rem;
   position: relative;
   overflow: hidden;
-  border-radius: $root-border-radius;
+  border-radius: $md-border-radius;
 }
 
 .section__4__swiper-slide:not(button) {
@@ -95,7 +100,7 @@
 
 .section__4__swiper__prev__btn {
   position: absolute;
-  left: -4rem;
+  left: $section-4-slide-btn-left-and-right;
   top: 50%;
   transform: translateY(-50%);
   @include forMobile() {
@@ -105,12 +110,18 @@
 
 .section__4__swiper__next__btn {
   position: absolute;
-  right: -4rem;
+  right: $section-4-slide-btn-left-and-right;
   top: 50%;
   transform: translateY(-50%);
   @include forMobile() {
     display: none;
   }
+}
+
+.section__4__swiper__prev__icon,
+.section__4__swiper__next__icon {
+  width: 2.75rem;
+  height: 2.75rem;
 }
 
 .section__4__swiper__prev__icon,
@@ -121,35 +132,38 @@
 
 .section__4__swiper__prev__btn:hover .section__4__swiper__prev__icon,
 .section__4__swiper__next__btn:hover .section__4__swiper__next__icon {
-  fill: $second-orange;
+  fill: $primary-70;
   transform: scale(1.2);
 }
 
-.section__4_swiper-pagination {
+.section__4__swiper-pagination {
   margin-top: 1rem;
   @include flexRowContainer();
   justify-content: center;
 }
 
-.swiper-pagination-bullet {
+.section__4__swiper-pagination-bullet {
   width: 0.5rem;
   height: 0.5rem;
-  background-color: $fourth-gray;
+  border-radius: 9999px;
+  background-color: $gray-10;
   transition: all $sm-transition-duration ease-out !important;
+  margin-left: 4px !important;
+  margin-right: 4px !important;
   @include forMobile() {
     width: 0.75rem;
-    border-radius: $root-border-radius;
+    border-radius: $md-border-radius;
     height: 0.325rem;
     margin-left: 2px !important;
     margin-right: 2px !important;
   }
 }
 
-.swiper-pagination-bullet-active {
-  background-color: $second-orange;
+.section__4__swiper-pagination-bullet-active {
+  background-color: $primary-70;
   @include forMobile() {
     width: 2.25rem;
-    background-color: $second-yellow;
+    background-color: $yellow-200;
   }
 }
 
@@ -212,6 +226,11 @@
   letter-spacing: 0.032rem;
 }
 
+.section__4__swiper-slide__location__icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
 .section__4__swiper-slide__price__container {
   position: absolute;
   left: 0;
@@ -220,7 +239,7 @@
   width: 9rem;
   height: 9rem;
   border-radius: 9999px;
-  background-color: $third-yellow;
+  background-color: $yellow-300;
   transition: all $sm-transition-duration ease-out;
   @include forMobile() {
     width: 8rem;
@@ -264,16 +283,7 @@
 }
 
 .section__4__swiper-slide__bookNow__btn {
-  @include smContainedButton();
-  margin-left: auto;
-  align-self: flex-end;
-  font-size: $sm-font-size;
-  padding: 0.5rem 0.75rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 120%; /* 3.84rem */
-  letter-spacing: 0.016rem;
-  transition: all $sm-transition-duration ease-out;
+  @include bookNowButton();
   @include forMobile() {
     display: none;
   }
@@ -284,11 +294,11 @@
 }
 
 .section__4__swiper-slide:hover .section__4__swiper-slide__price__container {
-  background-color: $second-orange;
+  background-color: $primary-70;
 }
 
 .section__4__swiper-slide:hover .section__4__swiper-slide__bookNow__btn {
-  background-color: $third-yellow;
+  background-color: $orange-600;
   color: $root-white;
 }
 
@@ -303,7 +313,7 @@
 }
 
 .section__4__primary__btn {
-  background-color: $second-orange;
+  background-color: $primary-70;
   color: $root-white;
   @include containedButton();
   @include forMobile() {
@@ -317,7 +327,7 @@
 }
 
 .section__4__secondary__btn {
-  background-color: $fifth-gray;
+  background-color: $elevation-20;
   @include containedButton();
   @include forMobile() {
     font-size: $md-font-size;
@@ -335,7 +345,7 @@
   font-weight: 700;
   line-height: 120%; /* 4.48rem */
   padding-bottom: 0.125rem;
-  border-bottom: 0.15rem solid $root-black;
+  border-bottom: 0.15rem solid $grey-80;
   display: block;
   margin: auto;
   margin-top: 1rem;

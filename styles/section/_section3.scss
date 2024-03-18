@@ -1,3 +1,9 @@
+$section-3-slide-width-and-height-desktop: 18rem;
+$section-3-slide-width-and-height-mobile: 6.5rem;
+$section-3-slide-button-bottom: -6.25rem;
+$section-3-slide-button-left-and-right: 6.25rem;
+$section-3-slide-button-translateY: 100%;
+
 .section__3__swiper {
   width: 100%;
   margin-top: 8rem;
@@ -30,8 +36,8 @@
 }
 
 .section__3__swiper-slide {
-  width: 18rem;
-  height: 18rem;
+  width: $section-3-slide-width-and-height-desktop;
+  height: $section-3-slide-width-and-height-desktop;
   border-radius: 9999px;
   position: relative;
   transition:
@@ -39,8 +45,8 @@
     opacity $md-transition-duration ease-out;
   opacity: 0.5;
   @include forMobile {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: $section-3-slide-width-and-height-mobile;
+    height: $section-3-slide-width-and-height-mobile;
   }
 }
 
@@ -51,14 +57,14 @@
 }
 
 .section__3__swiper-image {
-  width: 18rem;
-  height: 18rem;
+  width: $section-3-slide-width-and-height-desktop;
+  height: $section-3-slide-width-and-height-desktop;
   border-radius: 9999px;
   object-fit: cover;
   user-select: none;
   @include forMobile {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: $section-3-slide-width-and-height-mobile;
+    height: $section-3-slide-width-and-height-mobile;
   }
 }
 
@@ -69,9 +75,9 @@
 
 .section__3__swiper-prev-btn {
   position: absolute;
-  bottom: -6.25rem;
-  left: 6.25rem;
-  transform: translateY(100%);
+  bottom: $section-3-slide-button-bottom;
+  left: $section-3-slide-button-left-and-right;
+  transform: translateY($section-3-slide-button-translateY);
   opacity: 1;
   transition: opacity $md-transition-duration ease-out;
   @include forMobile {
@@ -81,9 +87,9 @@
 
 .section__3__swiper-next-btn {
   position: absolute;
-  bottom: -6.25rem;
-  right: 6.25rem;
-  transform: translateY(100%);
+  bottom: $section-3-slide-button-bottom;
+  right: $section-3-slide-button-left-and-right;
+  transform: translateY($section-3-slide-button-translateY);
   opacity: 1;
   transition: opacity $md-transition-duration ease-out;
   @include forMobile {
@@ -144,7 +150,7 @@
   width: 35rem;
   margin: auto;
   @include forMobile {
-    width: $root-container-width-mobile;
+    width: $container-width-mobile;
   }
 }
 
@@ -162,7 +168,7 @@
 }
 
 .section__3__slide__detail__name {
-  color: $third-orange;
+  color: $orange-600;
   @include forMobile {
     font-size: $sm-font-size;
     font-style: normal;
@@ -191,7 +197,7 @@
   line-height: 150%; /* 5.6rem */
   letter-spacing: 0.00933rem;
   text-align: center;
-  color: $fourth-gray;
+  color: $gray-30;
   text-wrap: pretty;
   @include forMobile() {
     font-size: $sm-font-size;
@@ -204,8 +210,7 @@
 }
 
 .section__3__slide__detail__contact {
-  margin-top: 0.875rem;
-  margin-bottom: 0.875rem;
+  margin: 0.875rem 0;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -214,8 +219,7 @@
   @include forMobile {
     flex-direction: column;
     gap: 0.125rem;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin: 0.75rem 0;
   }
 }
 
@@ -230,7 +234,7 @@
   font-weight: 700;
   line-height: 120%; /* 4.48rem */
   letter-spacing: 0.03733rem;
-  color: $second-orange;
+  color: $primary-70;
   margin-left: 0.25rem;
   @include forMobile() {
     font-size: $sm-font-size;
@@ -256,12 +260,9 @@
   }
 }
 
-.section__3__slide__detail__contact__whatsApp__icon {
-  height: 1.25rem;
-}
-
-.section__3__slide__detail__contact__email__icon {
-  height: 1.25rem;
+.section__3__slide__detail__contact__whatsApp__icon, .section__3__slide__detail__contact__email__icon {
+  height: 1rem;
+  width: 1rem;
 }
 
 .section__3__slide__detail__contact__information {
@@ -279,12 +280,12 @@
 }
 
 .section__3__secondary__btn {
-  background-color: $fifth-gray;
+  background-color: $elevation-20;
   @include containedButton();
 }
 
 .section__3__primary__btn {
-  background-color: $second-orange;
+  background-color: $primary-70;
   color: $root-white;
   @include containedButton();
 }

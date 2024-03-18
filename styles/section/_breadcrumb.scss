@@ -1,11 +1,11 @@
 .breadcrumb__container {
   @include flexRowContainer();
-  width: $root-container-width-desktop;
+  width: $container-width-desktop;
   margin: auto;
   gap: 0.5rem;
   margin-top: 2rem;
   @include forMobile() {
-    width: $root-container-width-mobile;
+    width: $container-width-mobile;
     margin-top: 1rem
   }
 }
@@ -31,9 +31,9 @@
   font-weight: 600;
   line-height: 120%; /* 0.9rem */
   letter-spacing: 0.00375rem;
-  color: $second-gray;
+  color: $gray-10;
 }
 
 .breadcrumb__link__text__active {
-  color: $root-black;
+  color: $grey-80;
 }

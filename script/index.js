@@ -120,19 +120,19 @@ function init() {
     section3Swiper.slideNext();
   });
 
-  // section 4 slide
-  let activeTab = "cheers-hostel-hanoi";
-  const buttonsTab = document.querySelectorAll(".section__4__contained__btn");
-  buttonsTab.forEach((buttonTab) => {
+  // section 4 slide tabs
+  const section4ButtonsTab = document.querySelectorAll(".section__4__contained__btn");
+  section4ButtonsTab.forEach((buttonTab) => {
     buttonTab.addEventListener("click", () => {
       activeTab = buttonTab.dataset.tab;
-      buttonsTab.forEach((button) => {
+      section4ButtonsTab.forEach((button) => {
         button.classList.remove("section__4__contained__btn__active");
       });
       buttonTab.classList.add("section__4__contained__btn__active");
     });
   });
 
+  // section 4 slide
   const section4Swiper = new Swiper(".section__4__swiper", {
     slidesPerView: 1,
     speed: 500,
@@ -141,8 +141,10 @@ function init() {
     slidesPerGroup: 1,
     loop: true,
     pagination: {
-      el: ".section__4_swiper-pagination",
+      el: ".section__4__swiper-pagination",
       clickable: true,
+      bulletClass: "section__4__swiper-pagination-bullet",
+      bulletActiveClass: "section__4__swiper-pagination-bullet-active"
     },
     breakpoints: {
       768: {
@@ -151,7 +153,6 @@ function init() {
       }
     }
   });
-
   const section4PrevBtn = document.querySelector(".section__4__swiper__prev__btn");
   const section4NextBtn = document.querySelector(".section__4__swiper__next__btn");
   section4PrevBtn.addEventListener("click", () => {
@@ -159,6 +160,48 @@ function init() {
   });
   section4NextBtn.addEventListener("click", () => {
     section4Swiper.slideNext();
+  });
+
+  // section 5 slide tabs
+  const buttonsTab = document.querySelectorAll(".section__5__contained__btn");
+  buttonsTab.forEach((buttonTab) => {
+    buttonTab.addEventListener("click", () => {
+      activeTab = buttonTab.dataset.tab;
+      buttonsTab.forEach((button) => {
+        button.classList.remove("section__5__contained__btn__active");
+      });
+      buttonTab.classList.add("section__5__contained__btn__active");
+    });
+  });
+
+  // section 4 slide
+  const section5Swiper = new Swiper(".section__5__swiper", {
+    slidesPerView: 4,
+    speed: 500,
+    spaceBetween: 24,
+    autoHeight: true,
+    slidesPerGroup: 4,
+    loop: true,
+    pagination: {
+      el: ".section__5__swiper-pagination",
+      clickable: true,
+      bulletClass: "section__5__swiper-pagination-bullet",
+      bulletActiveClass: "section__5__swiper-pagination-bullet-active"
+    },
+    // breakpoints: {
+    //   768: {
+    //     slidesPerView: 3,
+    //     slidesPerGroup: 3,
+    //   }
+    // }
+  });
+  const section5PrevBtn = document.querySelector(".section__5__swiper__prev__btn");
+  const section5NextBtn = document.querySelector(".section__5__swiper__next__btn");
+  section5PrevBtn.addEventListener("click", () => {
+    section5Swiper.slidePrev();
+  });
+  section5NextBtn.addEventListener("click", () => {
+    section5Swiper.slideNext();
   });
 }
 
