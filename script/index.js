@@ -120,15 +120,28 @@ function init() {
     section3Swiper.slideNext();
   });
 
+  // section 4 slides
+  const section4Images = document.querySelectorAll(".section__4__swiper-slide__image");
+  const section4Slides = [
+    { state: "cheers-hostel-hanoi", image: "assets/slide-image-4.png" },
+    { state: "cheers-du-gia-village", image: "assets/slide-image-2.png" },
+  ];
+
   // section 4 slide tabs
   const section4ButtonsTab = document.querySelectorAll(".section__4__contained__btn");
   section4ButtonsTab.forEach((buttonTab) => {
     buttonTab.addEventListener("click", () => {
-      activeTab = buttonTab.dataset.tab;
       section4ButtonsTab.forEach((button) => {
         button.classList.remove("section__4__contained__btn__active");
       });
       buttonTab.classList.add("section__4__contained__btn__active");
+      section4Slides.forEach((slide) => {
+        if (slide.state === buttonTab.dataset.tab) {
+          section4Images.forEach((section4Image) => {
+            section4Image.src = slide.image;
+          });
+        }
+      });
     });
   });
 
@@ -144,14 +157,14 @@ function init() {
       el: ".section__4__swiper-pagination",
       clickable: true,
       bulletClass: "section__4__swiper-pagination-bullet",
-      bulletActiveClass: "section__4__swiper-pagination-bullet-active"
+      bulletActiveClass: "section__4__swiper-pagination-bullet-active",
     },
     breakpoints: {
       768: {
         slidesPerView: 3,
         slidesPerGroup: 3,
-      }
-    }
+      },
+    },
   });
   const section4PrevBtn = document.querySelector(".section__4__swiper__prev__btn");
   const section4NextBtn = document.querySelector(".section__4__swiper__next__btn");
@@ -163,14 +176,28 @@ function init() {
   });
 
   // section 5 slide tabs
-  const buttonsTab = document.querySelectorAll(".section__5__contained__btn");
-  buttonsTab.forEach((buttonTab) => {
+  const section5Images = document.querySelectorAll(".section__5__swiper-slide__image");
+  const section5Slides = [
+    { state: "motorbike-tour", image: "assets/slide-image-5.png" },
+    { state: "cruise-tour", image: "assets/slide-image-4.png" },
+    { state: "trekking-tour", image: "assets/slide-image-3.png" },
+    { state: "jeep-tour", image: "assets/slide-image-2.png" },
+    { state: "walking-tour", image: "assets/slide-image-1.png" },
+  ];
+  const section5ButtonsTab = document.querySelectorAll(".section__5__contained__btn");
+  section5ButtonsTab.forEach((buttonTab) => {
     buttonTab.addEventListener("click", () => {
-      activeTab = buttonTab.dataset.tab;
-      buttonsTab.forEach((button) => {
+      section5ButtonsTab.forEach((button) => {
         button.classList.remove("section__5__contained__btn__active");
       });
       buttonTab.classList.add("section__5__contained__btn__active");
+      section5Slides.forEach((slide) => {
+        if (slide.state === buttonTab.dataset.tab) {
+          section5Images.forEach((section5Image) => {
+            section5Image.src = slide.image;
+          });
+        }
+      });
     });
   });
 
@@ -186,7 +213,7 @@ function init() {
       el: ".section__5__swiper-pagination",
       clickable: true,
       bulletClass: "section__5__swiper-pagination-bullet",
-      bulletActiveClass: "section__5__swiper-pagination-bullet-active"
+      bulletActiveClass: "section__5__swiper-pagination-bullet-active",
     },
     // breakpoints: {
     //   768: {

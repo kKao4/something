@@ -103,6 +103,7 @@ $section-5-slide-btn-left-and-right: -3.75rem;
     width: calc($container-width-mobile + 1rem);
     margin-bottom: $section-5-margin-bottom-mobile;
   }
+  user-select: none;
 }
 
 .section__5__swiper {
@@ -128,6 +129,13 @@ $section-5-slide-btn-left-and-right: -3.75rem;
   border-radius: $md-border-radius;
   overflow: hidden;
   position: relative;
+}
+
+.section__5__swiper-slide__image {
+  width: 100%;
+  max-height: 11.6rem;
+  object-fit: cover;
+  object-position: center;
 }
 
 .section__5__swiper-slide__image__location__container {

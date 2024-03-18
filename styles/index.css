@@ -1446,9 +1446,11 @@ video {
 
 .section__4__swiper-slide__image {
   width: 100%;
-  height: 100%;
+  height: 17rem;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   transition: all 0.4s ease-out;
 }
 
@@ -1932,6 +1934,9 @@ body {
   width: calc(89% + 1rem);
   margin: auto;
   margin-bottom: 1.25rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 @media (max-width: 768px) {
   .section__5__swiper__container {
@@ -1959,6 +1964,15 @@ body {
   border-radius: 0.5rem;
   overflow: hidden;
   position: relative;
+}
+
+.section__5__swiper-slide__image {
+  width: 100%;
+  max-height: 11.6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .section__5__swiper-slide__image__location__container {
