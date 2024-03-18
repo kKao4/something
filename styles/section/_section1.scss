@@ -1,0 +1,64 @@
+.section__1 {
+  width: 100%;
+  height: 18.5rem;
+  background-image: url("../assets/section-1-bg-image-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.section__1__filter {
+  background: $root-white;
+  opacity: 0.8;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.section__1__deco {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/s1_decor.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.section__1__heading {
+  font-family: "Heavitas", sans-serif;
+  font-weight: 400;
+  line-height: 120%;
+  font-size: 11rem;
+  letter-spacing: 0.00875rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: -2rem;
+  background-image: url("../assets/section-1-bg-image-desktop.png");
+  background-clip: text;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+@include forMobile() {
+  .section__1 {
+    height: 12rem;
+    background-image: url("../assets/section-1-bg-image-phone.jpg");
+  }
+  .section__1__heading {
+    bottom: 3rem;
+    font-size: 3rem;
+    // background-image: url("../assets/section-1-bg-image-phone.jpg");
+  }
+  .section__1__filter {
+    background: linear-gradient(to top, rgba(255, 255, 255) 0%, rgba(255, 255, 255, 0.1) 100%);
+  }
+}

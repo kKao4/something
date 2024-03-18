@@ -1,0 +1,188 @@
+.section__2 {
+  @include sectionContainer();
+}
+
+.section__2__buttons__container {
+  @include flexRowContainer();
+  width: $root-container-width-desktop;
+  margin: auto;
+  align-items: flex-start;
+  gap: 6rem;
+  @include forMobile() {
+    width: $root-container-width-mobile;
+    gap: 1rem;
+  }
+}
+
+.section__2__button__container {
+  flex-basis: 50%;
+}
+
+.section__2__button {
+  max-width: fit-content;
+  font-size: $lg-font-size;
+  font-weight: 700;
+  line-height: 2rem;
+  pointer-events: none;
+  @include forMobile() {
+    font-size: $md-font-size;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2rem;
+    padding-bottom: 0.125rem;
+    border-bottom: 2.5px solid transparent;
+    transition: all $sm-transition-duration ease-out;
+    min-width: 100%;
+    pointer-events: all;
+  }
+}
+
+.section__2__button__active {
+  @include forMobile() {
+    border-bottom-color: $root-yellow;
+    color: $root-yellow;
+  }
+}
+
+.section__2__descriptions__container {
+  @include flexRowContainer();
+  width: $root-container-width-desktop;
+  margin: auto;
+  gap: 6rem;
+  @include forMobile() {
+    flex-direction: column;
+    width: $root-container-width-mobile;
+    gap: 0rem;
+  }
+}
+
+.section__2__description__container {
+  width: 100%;
+  flex-basis: 50%;
+  margin-top: 0.75rem;
+  @include forMobile {
+    flex-basis: 100%;
+  }
+  @include forMobile() {
+    &:not(:nth-child(1)) {
+      display: none;
+    }
+  }
+}
+
+.section__2__description {
+  max-width: 20rem;
+  font-size: $md-font-size;
+  font-style: normal;
+  line-height: 1.375rem; /* 157.143% */
+  letter-spacing: 0.00219rem;
+  color: $root-gray;
+  @include forMobile() {
+    font-size: $sm-font-size;
+    line-height: 120%; /* 0.975rem */
+    letter-spacing: 0.00206rem;
+    min-width: 100%;
+  }
+}
+
+.section__2__accordions__container {
+  @include flexRowContainer();
+  gap: 6rem;
+  width: $root-container-width-desktop;
+  margin: auto;
+  align-items: flex-start;
+  @include forMobile() {
+    flex-direction: column;
+    gap: 0rem;
+    width: $root-container-width-mobile;
+  }
+}
+
+.section__2__accordion__container {
+  flex-basis: 50%;
+  @include forMobile() {
+    flex-basis: 100%;
+  }
+  width: 100%;
+  @include forMobile() {
+    &:not(:nth-child(1)) {
+      display: none;
+    }
+  }
+}
+
+.section__2__accordion {
+  margin-top: 1.5rem;
+  @include forMobile() {
+    margin-top: 0.75rem;
+  }
+}
+
+.section__2__accordion__button {
+  @include flexRowContainer();
+  padding: 0.5rem 0;
+  border-bottom: 0.0625rem solid $third-gray;
+  width: 100%;
+}
+
+.section__2__accordion__title {
+  font-size: $md-font-size;
+  font-weight: 500;
+  line-height: 120%; /* 1.05rem */
+  letter-spacing: 0.00875rem;
+  transition: all $sm-transition-duration ease-out;
+}
+
+.section__2__accordion__arrow__icon {
+  margin-left: auto;
+  width: 0.875rem;
+  height: 0.875rem;
+  transition: all $sm-transition-duration ease-out;
+}
+
+.section__2__accordion__arrow__icon path {
+  transition: all $sm-transition-duration ease-out;
+}
+
+.section__2__accordion__content {
+  font-size: 0.875rem;
+  line-height: 120%; /* 1.05rem */
+  letter-spacing: 0.00875rem;
+  color: $root-black;
+  margin-top: 0.5rem;
+  text-align: justify;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height $sm-transition-duration ease-out;
+}
+
+.section__2__accordion__button__active .section__2__accordion__title {
+  color: $root-orange;
+}
+
+.section__2__accordion__button__active .section__2__accordion__arrow__icon {
+  transform: rotateX(180deg);
+}
+
+.section__2__accordion__button__active .section__2__accordion__arrow__icon path {
+  fill: $root-orange;
+}
+
+.section__2__readMore__btn {
+  margin: auto;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.375rem; /* 157.143% */
+  letter-spacing: 0.00219rem;
+  color: $root-orange;
+  display: block;
+  text-transform: uppercase;
+  color: $second-orange;
+  margin-top: 1rem;
+  padding: 0.375rem;
+  @include flexRowContainer();
+  gap: 0.25rem;
+  @include forMobile() {
+    margin-top: 0.25rem;
+  }
+}

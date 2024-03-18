@@ -1,0 +1,363 @@
+@import "./reset";
+@import "./variables/variables";
+@import "./mixin/mixin";
+@import "./section/header";
+@import "./section/section1";
+@import "./section/breadcrumb";
+@import "./section/section2";
+@import "./section/section3";
+
+@include font("Heavitas", "../assets/font/Heavitas.otf");
+
+* {
+  box-sizing: border-box;
+  font-size: 1vw;
+  font-family: "Poppins", sans-serif;
+  color: $root-black;
+}
+
+@include forMobile {
+  * {
+    font-size: 4.267vw;
+  }
+}
+
+body {
+  min-height: 100dvh;
+}
+
+.section__4 {
+  @include sectionContainer();
+  @include forMobile() {
+    margin-top: 3.25rem;
+  }
+}
+
+.section__h1 {
+  color: $second-orange;
+  text-align: center;
+  font-family: Heavitas;
+  font-size: $sxl-font-size;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 10.24rem */
+  margin-bottom: 1.25rem;
+  @include forMobile() {
+    font-size: $xl-font-size;
+    margin-bottom: 1rem;
+  }
+}
+
+.section__4__buttons__container {
+  @include flexRowContainer();
+  gap: 1rem;
+  margin: auto;
+  width: max-content;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @include forMobile {
+    width: $root-container-width-mobile;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+  }
+}
+
+.section__4__contained__btn {
+  @include smContainedButton();
+}
+
+.section__4__contained__btn__active {
+  background-color: $second-yellow;
+}
+
+.section__4__slide__caption {
+  font-size: $md-font-size;
+  width: 40rem;
+  text-align: center;
+  text-wrap: pretty;
+  margin: auto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 5.6rem */
+  letter-spacing: 0.00933rem;
+  @include forMobile {
+    width: $root-container-width-mobile;
+    font-size: $sm-font-size;
+  }
+}
+
+.section__4__swiper__container {
+  position: relative;
+  width: $root-container-width-desktop;
+  margin: auto;
+  @include forMobile() {
+    width: $root-container-width-mobile;
+  }
+}
+
+.section__4__swiper {
+  margin-top: 1.25rem !important;
+  margin: auto;
+}
+
+.section__4__swiper-slide {
+  height: 17rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: $root-border-radius;
+}
+
+.section__4__swiper-slide:not(button) {
+  cursor: default;
+}
+
+.section__4__swiper-slide__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all $sm-transition-duration ease-out;
+}
+
+.section__4__swiper__prev__btn {
+  position: absolute;
+  left: -4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  @include forMobile() {
+    display: none;
+  }
+}
+
+.section__4__swiper__next__btn {
+  position: absolute;
+  right: -4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  @include forMobile() {
+    display: none;
+  }
+}
+
+.section__4__swiper__prev__icon,
+.section__4__swiper__next__icon {
+  transition: all $sm-transition-duration ease-out;
+  fill: $root-white;
+}
+
+.section__4__swiper__prev__btn:hover .section__4__swiper__prev__icon,
+.section__4__swiper__next__btn:hover .section__4__swiper__next__icon {
+  fill: $second-orange;
+  transform: scale(1.2);
+}
+
+.section__4_swiper-pagination {
+  margin-top: 1rem;
+  @include flexRowContainer();
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: $fourth-gray;
+  transition: all $root-transition-duration ease-out !important;
+  @include forMobile() {
+    width: 0.75rem;
+    border-radius: $root-border-radius;
+    height: 0.325rem;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $second-orange;
+  transition: all $root-transition-duration ease-out !important;
+  @include forMobile() {
+    width: 2.25rem;
+    background-color: $second-yellow;
+  }
+}
+
+.section__4__swiper-slide__content__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  @include forMobile() {
+    padding: 0.75rem;
+  }
+}
+
+.section__4__swiper-slide__information__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.section__4__swiper-slide__name {
+  font-size: $md-font-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 4.48rem */
+  color: $root-white;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ececec;
+  width: fit-content;
+  margin-bottom: 0.25rem;
+  @include forMobile() {
+    padding-bottom: 0.25rem;
+  }
+}
+
+.section__4__swiper-slide__guest,
+.section__4__swiper-slide__highlight {
+  @include flexRowContainer();
+  gap: 0.25rem;
+  color: $root-white;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 3.84rem */
+  letter-spacing: 0.032rem;
+  font-size: $sm-font-size;
+}
+
+.section__4__swiper-slide__guest span,
+.section__4__swiper-slide__highlight span {
+  font-size: $sm-font-size;
+  color: #ececec;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 3.84rem */
+  letter-spacing: 0.032rem;
+}
+
+.section__4__swiper-slide__price__container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-18%, -42%);
+  width: 9rem;
+  height: 9rem;
+  border-radius: 9999px;
+  background-color: $third-yellow;
+  transition: all $sm-transition-duration ease-out;
+  @include forMobile() {
+    width: 8rem;
+    height: 8rem;
+    transform: translate(-18%, -40%);
+  }
+}
+
+.section__4__swiper-slide__price {
+  position: absolute;
+  top: 60%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  font-size: $xl-font-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 6.4rem */
+  color: $root-white;
+  @include forMobile() {
+    top: 58%;
+    left: 38%;
+  }
+}
+
+.section__4__swiper-slide__slash {
+  position: absolute;
+  width: 3.5rem;
+  height: 0.075rem;
+  background-color: $root-white;
+  bottom: 2.5rem;
+  right: 2rem;
+  transform: rotate(-45deg);
+}
+
+.section__4__swiper-slide__night {
+  position: absolute;
+  color: $root-white;
+  font-size: $sm-font-size;
+  bottom: 1.375rem;
+  right: 1.75rem;
+}
+
+.section__4__swiper-slide__bookNow__btn {
+  @include smContainedButton();
+  margin-left: auto;
+  align-self: flex-end;
+  font-size: $sm-font-size;
+  padding: 0.5rem 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 3.84rem */
+  letter-spacing: 0.016rem;
+  transition: all $sm-transition-duration ease-out;
+  @include forMobile() {
+    display: none;
+  }
+}
+
+.section__4__swiper-slide:hover .section__4__swiper-slide__image {
+  transform: scale(1.1);
+}
+
+.section__4__swiper-slide:hover .section__4__swiper-slide__price__container {
+  background-color: $second-orange;
+}
+
+.section__4__swiper-slide:hover .section__4__swiper-slide__bookNow__btn {
+  background-color: $third-yellow;
+  color: $root-white;
+}
+
+.section__4__contained__button__container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+}
+
+.section__4__contained__button__container {
+  margin-top: 0.75rem;
+}
+
+.section__4__primary__btn {
+  background-color: $second-orange;
+  color: $root-white;
+  @include containedButton();
+  @include forMobile() {
+    font-size: $md-font-size;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 4.48rem */
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+}
+
+.section__4__secondary__btn {
+  background-color: $fifth-gray;
+  @include containedButton();
+  @include forMobile() {
+    font-size: $md-font-size;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 4.48rem */
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+}
+
+// TODO: add alt for img
+// TODO: html sematic refactoring
+// TODO: flex change gap -> margin

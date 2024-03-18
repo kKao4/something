@@ -1,0 +1,83 @@
+@import "../variables/variables.scss";
+
+// FONT
+@mixin font($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file);
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+// DIV
+@mixin circle($num) {
+  width: $num;
+  height: $num;
+  border-radius: 9999px;
+}
+
+// POSITION
+@mixin positionCenter() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// FLEX
+@mixin flexRowContainer() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+// BUTTON
+@mixin containedButton() {
+  @include flexRowContainer();
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: $md-font-size;
+  border-radius: $root-border-radius;
+  justify-content: center;
+  @include forMobile() {
+    font-size: $sm-font-size;
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+}
+
+@mixin smContainedButton() {
+  padding: 0.6rem 1rem;
+  font-size: $md-font-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 4.48rem */
+  border-radius: $root-border-radius;
+  flex: none;
+  transition: all $sm-transition-duration ease-out;
+  background-color: $fifth-gray;
+  @include forMobile() {
+    font-size: $sm-font-size;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 3.84rem */
+    letter-spacing: 0.016rem;
+    padding: 0.375rem 0.675rem;
+  }
+}
+
+// CONTAINER
+@mixin sectionContainer() {
+  margin-top: 5rem;
+  @include forMobile() {
+    margin-top: 1.25rem;
+  }
+}
+
+@mixin forMobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

@@ -1,0 +1,290 @@
+.section__3__swiper {
+  width: 100%;
+  margin-top: 8rem;
+  margin-bottom: 6rem;
+  overflow: visible;
+  overflow-x: clip;
+  position: relative;
+  @include forMobile {
+    margin-top: 3.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.section__3__swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.section__3__swiper-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 26rem;
+  height: 26rem;
+  @include forMobile {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+.section__3__swiper-slide {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 9999px;
+  position: relative;
+  transition:
+    transform $md-transition-duration ease-out,
+    opacity $md-transition-duration ease-out;
+  opacity: 0.5;
+  @include forMobile {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+}
+
+.section__3__swiper-slide-active {
+  position: relative;
+  transform: scale(1.15) !important;
+  opacity: 1 !important;
+}
+
+.section__3__swiper-image {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  user-select: none;
+  @include forMobile {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+}
+
+.section__3__swiper-button-prev-icon {
+  width: 5.75rem;
+  height: 4rem;
+}
+
+.section__3__swiper-prev-btn {
+  position: absolute;
+  bottom: -6.25rem;
+  left: 6.25rem;
+  transform: translateY(100%);
+  opacity: 1;
+  transition: opacity $md-transition-duration ease-out;
+  @include forMobile {
+    display: none;
+  }
+}
+
+.section__3__swiper-next-btn {
+  position: absolute;
+  bottom: -6.25rem;
+  right: 6.25rem;
+  transform: translateY(100%);
+  opacity: 1;
+  transition: opacity $md-transition-duration ease-out;
+  @include forMobile {
+    display: none;
+  }
+}
+
+.section__3__swiper-disabled-btn {
+  opacity: 0.5;
+}
+
+.section__3__swiper-slide__caption {
+  position: absolute;
+  bottom: -3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all $md-transition-duration ease-out;
+  user-select: none;
+  width: max-content;
+  @include forMobile {
+    bottom: -2rem;
+  }
+}
+
+.section__3__swiper-slide__caption__name {
+  font-size: $lg-font-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 5.12rem */
+  letter-spacing: 0.05333rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+  @include forMobile() {
+    font-size: $xs-font-size;
+    font-weight: 700;
+    line-height: 120%; /* 2.13707rem */
+    letter-spacing: 0.02213rem;
+  }
+}
+.section__3__swiper-slide__caption__job {
+  font-size: $md-font-size;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 4.48rem */
+  letter-spacing: 0.03733rem;
+  text-align: center;
+  @include forMobile {
+    font-size: $xs-font-size;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 1.87013rem */
+    letter-spacing: 0.01547rem;
+  }
+}
+
+.section__3__slide__detail {
+  display: block;
+  width: 35rem;
+  margin: auto;
+  @include forMobile {
+    width: $root-container-width-mobile;
+  }
+}
+
+.section__3__slide__detail__title {
+  font-size: $md-font-size;
+  font-weight: 700;
+  line-height: 120%; /* 5.12rem */
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05333rem;
+  text-align: center;
+  display: block;
+  @include forMobile() {
+    margin-bottom: 0.375rem;
+  }
+}
+
+.section__3__slide__detail__name {
+  color: $third-orange;
+  @include forMobile {
+    font-size: $sm-font-size;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 4.48rem */
+    letter-spacing: 0.03733rem;
+    text-align: center;
+  }
+}
+
+.section__3__slide__detail__job {
+  @include forMobile {
+    display: block;
+    font-size: $xsm-font-size;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 3.84rem */
+    letter-spacing: 0.016rem;
+    text-align: center;
+  }
+}
+
+.section__3__slide__detail__description {
+  font-size: $md-font-size;
+  font-weight: 400;
+  line-height: 150%; /* 5.6rem */
+  letter-spacing: 0.00933rem;
+  text-align: center;
+  color: $fourth-gray;
+  text-wrap: pretty;
+  @include forMobile() {
+    font-size: $sm-font-size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 4.8rem */
+    letter-spacing: 0.008rem;
+    color: inherit;
+  }
+}
+
+.section__3__slide__detail__contact {
+  margin-top: 0.875rem;
+  margin-bottom: 0.875rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  @include flexRowContainer();
+  gap: 1.25rem;
+  @include forMobile {
+    flex-direction: column;
+    gap: 0.125rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.section__3__slide__detail__contact__container {
+  @include flexRowContainer();
+  gap: 0.25rem;
+}
+
+.section__3__slide__detail__contact__app {
+  font-size: $md-font-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 4.48rem */
+  letter-spacing: 0.03733rem;
+  color: $second-orange;
+  margin-left: 0.25rem;
+  @include forMobile() {
+    font-size: $sm-font-size;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 3.84rem */
+    letter-spacing: 0.016rem;
+  }
+}
+
+.section__3__slide__detail__contact__content {
+  font-size: $md-font-size;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 4.48rem */
+  letter-spacing: 0.03733rem;
+  @include forMobile() {
+    font-size: $sm-font-size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 3.84rem */
+    letter-spacing: 0.016rem;
+  }
+}
+
+.section__3__slide__detail__contact__whatsApp__icon {
+  height: 1.25rem;
+}
+
+.section__3__slide__detail__contact__email__icon {
+  height: 1.25rem;
+}
+
+.section__3__slide__detail__contact__information {
+  @include flexRowContainer();
+  gap: 1.25rem;
+  width: fit-content;
+  margin: auto;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 4.48rem */
+  @include forMobile() {
+    gap: 0.75rem;
+    width: 100%;
+  }
+}
+
+.section__3__secondary__btn {
+  background-color: $fifth-gray;
+  @include containedButton();
+}
+
+.section__3__primary__btn {
+  background-color: $second-orange;
+  color: $root-white;
+  @include containedButton();
+}
