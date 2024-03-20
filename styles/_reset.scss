@@ -383,3 +383,12 @@ video {
 [hidden] {
   display: none;
 }
+
+q {
+  display: block;
+}
+
+q:before,
+q:after {
+    content: none;
+}

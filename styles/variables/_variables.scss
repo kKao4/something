@@ -1,37 +1,53 @@
+// COLOR
 $root-white: #fff;
 $elevation-20: #f8f8f8;
+$elevation-30: #F0F0F0;
 $primary-70: #b34b1e;
 $orange-600: #e85925;
 $orange-650: #e15214;
-$orange-700: #B5461D;
+$orange-700: #b5461d;
 $yellow-700: #b58e00;
 $yellow-200: #ffda54;
-$yellow-300: #e8b600;
+$yellow-300: #e8b600; 
+$gray-5: #D9D9D9;
 $gray-10: #c5c5c5;
-$gray-20: #A9A9A9;
+$gray-20: #B7B7B7;
 $gray-30: #828282;
 $gray-40: #6a6a6a;
 $gray-50: #727272;
-$grey-80: #262626;
+$gray-80: #262626;
+$gray-bg-form: #F8F8F8;
 $border-dashed-gray: #ddd;
+
+// TRANSITION
 $md-transition-duration: 0.5s;
 $sm-transition-duration: 0.4s;
+$xs-transition-duration: 0.2s;
+
+// BOX SHADOW
 $root-box-shadow:
   0px 0.25rem 2rem 0px rgba(0, 0, 0, 0.04),
   0px 0px 1.25rem 0px rgba(0, 0, 0, 0.06);
 $second-box-shadow:
   0px 0.2rem 1.5rem 0px rgba(92, 1, 1, 0.04),
   0px 0px 0.75rem 0px rgba(181, 70, 29, 0.08);
+
+// CONTAINER
 $container-width-desktop: 89%;
-$container-width-mobile: 95%;
+$container-width-mobile: 92%;
+
+// BORDER RADIUS
 $md-border-radius: 0.5rem;
 $sm-border-radius: 0.25rem;
+
+// FONT SIZE
 $_4xl-font-size: 2rem;
 $_3xl-font-size: 1.75rem;
 $_2xl-font-size: 1.5rem;
 $xl-font-size: 1.25rem;
 $lg-font-size: 1rem;
 $md-font-size: 0.875rem;
+$smd-font-size: 0.8125rem;
 $sm-font-size: 0.75rem;
 $xsm-font-size: 0.675rem;
 $xs-font-size: 0.5rem;

@@ -8,6 +8,7 @@
 @import "./section/section3";
 @import "./section/section4";
 @import "./section/section5";
+@import "./section/footer";
 
 @include font("Heavitas", "../assets/font/Heavitas.otf");
 
@@ -15,7 +16,7 @@
   box-sizing: border-box;
   font-size: 1vw;
   font-family: "Poppins", sans-serif;
-  color: $grey-80;
+  color: $gray-80;
 }
 
 @include forMobile {
@@ -28,220 +29,532 @@ body {
   min-height: 100dvh;
 }
 
-$input-background-color: #f6f6f6;
-
-.footer__container {
-  position: relative;
-  height: 100dvh;
-  background-image: url("../assets/footer-bg-img.png"), url("../assets/footer-bg-deco-2.png"),
-    url("../assets/footer-bg-deco-1.png");
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: cover;
-  background-position: center;
-  display: flex;
+select {
+  display: none;
 }
 
-.footer__content {
-  position: absolute;
-  height: 50%;
-  align-items: flex-end;
-  background-color: $root-white;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-}
-
-.footer__content__container {
-  @include flexRowContainer();
-  padding: 4rem 0;
-  width: $container-width-desktop;
+.section__6 {
+  display: block;
   margin: auto;
-  align-items: flex-start;
+  width: $container-width-desktop;
   @include forMobile() {
     width: $container-width-mobile;
   }
 }
 
-.footer__deco {
-  position: absolute;
-  top: 50.2%;
-  left: 0;
-  transform: translateY(-100%);
-  width: 100%;
-  object-fit: cover;
-}
-
-.footer__firstCol {
-  flex-basis: 18%;
-  display: flex;
-  flex-direction: column;
-}
-.footer__secondCol {
-  flex-basis: 24%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.footer__thirdCol {
-  flex-basis: 13%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.footer__fourthCol {
-  flex-basis: 17%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.footer__fifthCol {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.footer__logo__icon {
-  margin-bottom: 1.5rem;
-}
-
-.footer__circle__link__container {
-  @include flexRowContainer();
-  gap: 0.5rem;
-  width: fit-content;
-  margin-left: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer__circle__link {
-  @include flexRowContainer();
-  justify-content: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  border-radius: 9999px;
-  background-color: $orange-700;
-}
-
-.footer__logo__icon {
-  width: 9.5rem;
-  height: 9.5rem;
-}
-
-.footer__facebook__icon,
-.footer__youtube__icon,
-.footer__tiktok__icon {
-  width: 1rem;
-  height: 1rem;
-}
-
-.footer__payment__method__container {
-  @include flexRowContainer();
-  margin-left: 1.75rem;
-}
-
-.footer__visa__icon,
-.footer__masterCard__icon {
-  width: 3.25rem;
-  height: 3.25rem;
-}
-
-.footer__h2 {
-  font-size: $lg-font-size;
+.section__6__strong {
   font-family: "Heavitas", sans-serif;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 5.12rem */
-  letter-spacing: 0.05333rem;
+  line-height: normal;
+  margin-bottom: 0.5rem;
+  @include forMobile() {
+    font-size: $sm-font-size;
+    line-height: normal;
+  }
 }
 
-.footer__contact__container,
-.footer__tour__container,
-.footer__hostel__container {
-  @include flexRowContainer();
-  gap: 0.5rem;
-}
-
-.footer__home__icon,
-.footer__world__icon,
-.footer__phone__icon,
-.footer__motorbike__icon,
-.footer__home__icon,
-.footer__email__icon {
-  width: 1rem;
-  height: 1rem;
-}
-
-.footer__phone__icon {
-  align-self: flex-start;
-  margin-top: 0.25rem;
-}
-
-.footer__contact__text *,
-.footer__contact__text,
-.footer__tour__text *,
-.footer__tour__text {
-  font-size: $md-font-size;
+.section__6__h1 {
+  font-family: "Heavitas", sans-serif;
+  font-size: $_4xl-font-size;
   font-style: normal;
-  font-weight: 500;
-  line-height: 120%; /* 4.48rem */
-  letter-spacing: 0.03733rem;
+  font-weight: 400;
+  line-height: 3rem; /* 150% */
+  margin-bottom: 0.5rem;
+  @include forMobile() {
+    font-size: $_2xl-font-size;
+    line-height: 1.75rem;
+  }
+}
+
+.section__6__form {
+  @include flexRowContainer();
+  gap: 1.25rem;
+  align-items: flex-start;
+  @include forMobile() {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.section__6__form__firstCol {
+  flex-basis: 50%;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 1rem;
 }
 
-.footer__form {
+.section__6__noOfPax__container,
+.section__6__fieldset__customer {
+  @include flexRowContainer();
+}
+
+.section__6__legend,
+.section__6__label {
+  color: $gray-50;
+  font-size: $md-font-size;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25rem; /* 142.857% */
+  letter-spacing: 0.00875rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.section__6__pax__container {
+  padding: 0.75rem 1rem;
+  background-color: $gray-bg-form;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-radius: $md-border-radius;
+}
+
+.section__6__label__noOfPax {
+  font-size: $md-font-size;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem; /* 142.857% */
+  letter-spacing: 0.00875rem;
+  color: $gray-50;
+}
+
+.section__6__moneyPerPax__container {
+  @include flexRowContainer();
+  margin-left: auto;
+}
+
+.section__6__moneyPerPax {
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem; /* 150% */
+  letter-spacing: 0.005rem;
+  font-size: $lg-font-size;
+  color: $gray-50;
+  margin-right: 0.75rem;
+}
+
+.section__6__circle__btn {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 9999px;
+  background-color: $root-white;
+  color: $gray-80;
+}
+
+.section__6__noOfPax__value {
+  font-size: $md-font-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.375rem; /* 157.143% */
+  letter-spacing: 0.00219rem;
+  margin: 0 0.5rem;
+}
+
+.section__6__divider {
+  background-color: rgba(217, 217, 217, 0.6);
+  height: 0.05rem;
+}
+
+.section__6__total__pax__container {
+  @include flexRowContainer();
+}
+
+.section__6__total__pax__text {
+  font-size: $lg-font-size;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem; /* 150% */
+  letter-spacing: 0.005rem;
+  color: $orange-700;
+}
+
+.section__6__total__pax__money {
+  margin-left: auto;
+  padding: 0.75rem 1rem;
+  background-color: $root-white;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem; /* 120% */
+  letter-spacing: 0.00188rem;
+  color: $orange-700;
+  font-size: $xl-font-size;
+  border-radius: $md-border-radius;
+  width: 12rem;
+  text-align: center;
+  @include forMobile() {
+    width: 7.0625rem;
+  }
+}
+
+.section__6__customer__container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
   gap: 0.75rem;
 }
 
-.footer__input {
-  background-color: $input-background-color;
-  padding: 0.5rem 0.75rem;
-  border-radius: $sm-border-radius;
-  font-size: $md-font-size;
-  &::placeholder {
-    color: $gray-20;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 5.6rem */
-    letter-spacing: 0.00933rem;
-  }
-  &:focus {
-    outline: none;
-  }
+.section__6__input {
+  @include input();
+  padding: 0.675rem 1rem;
+  background-color: $gray-bg-form;
 }
 
-.footer__input__name,
-.footer__input__message,
-.footer__input__message {
+.section__6__rowSpan__2 {
   grid-column: span 2 / span 2;
 }
 
-.footer__input__email,
-.footer__input__phone {
-  grid-column: span 1 / span 1;
+.section__6__input__email,
+.section__6__input__phone {
+  grid-column: span 1 / span 1 !important;
+  @include forMobile() {
+    grid-column: span 2 / span 2 !important;
+  }
 }
 
-.footer__submit__btn {
-  background-color: $primary-70;
+.section__6__input__date {
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+}
+
+.section__6__inputs__container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: stretch;
+  @include forMobile() {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.section__6__inputs__thirdCol {
+  grid-column: span 2 / span 2;
+}
+
+.section__6__selectField {
+  @include flexRowContainer();
+  padding: 0.875rem 1rem;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  background-color: $input-background-color;
+  border-radius: $md-border-radius;
+  width: 100%;
+}
+
+.section__6__selectField__text {
+  font-size: $md-font-size;
+  color: $gray-80;
+}
+
+.section__6__selectField__active .section__6__dropdown__container {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.section__6__selectField__icon {
+  width: 0.575rem;
+  height: 0.575rem;
+  margin-left: auto;
+}
+
+.section__6__dropdown__container {
+  position: absolute;
+  width: 100%;
+  bottom: -0.5rem;
+  left: 0;
+  transform: translateY(100%);
+  list-style: none;
+  border-radius: $md-border-radius;
+  box-shadow: $root-box-shadow;
+  background-color: $root-white;
+  z-index: 3;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all $xs-transition-duration ease-out;
+}
+
+.section__6__dropdown__item {
+  padding: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 142.857% */
+  letter-spacing: 0.00875rem;
+  font-size: $md-font-size;
+  width: 100%;
+  text-align: start;
+  transition: all $sm-transition-duration;
+  color: $gray-40;
+  &:hover {
+    background-color: $elevation-30;
+  }
+}
+
+.section__6__dropdown__item__active {
+  background-color: $elevation-30;
+}
+
+.section__6__deco__form__container {
+  width: 100%;
+  text-align: center;
+  // height: 3rem;
+  position: relative;
+  padding: 0.75rem 0;
+}
+
+.section__6__form__deco__right__desktop {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: 2.875rem;
+  transform: translateY(42%);
+  @include forMobile() {
+    display: none;
+  }
+}
+
+.section__6__form__deco__left__desktop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: 1.875rem;
+  transform: translateY(-15%);
+  @include forMobile() {
+    display: none;
+  }
+}
+
+.section__6__form__deco__left__mobile {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 5.0625rem;
+  transform: translateY(-50%);
+  @include forMobile() {
+    display: block;
+  }
+}
+
+.section__6__form__deco__right__mobile {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 5.0625rem;
+  transform: translateY(-50%);
+  @include forMobile() {
+    display: block;
+  }
+}
+
+.section__6__form__deco__text {
+  font-size: $lg-font-size;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem; /* 150% */
+  letter-spacing: 0.0125rem;
+  color: $primary-70;
+}
+
+.section__6__form__secondCol {
+  flex-basis: 50%;
+  padding-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.section__6__h2 {
+  color: $gray-80;
+  font-size: $xl-font-size;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem; /* 120% */
+  letter-spacing: 0.00188rem;
+  @include forMobile() {
+    font-size: $lg-font-size;
+  }
+}
+
+.section__6__confirm__table {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-radius: $md-border-radius;
+  background-color: #f8fdff;
+  border: 2px solid #eee;
+  @include forMobile() {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.section__6__confirm__table__firstCol {
+  grid-column: span 1 / span 1;
+  padding: 0.675rem 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.125rem;
+  font-size: $smd-font-size;
+  color: $gray-80;
+  border-bottom: 0.5px solid #eee;
+  @include forMobile() {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.section__6__confirm__table__secondCol {
+  grid-column: span 3 / span 3;
+  padding: 0.675rem 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.125rem;
+  font-size: $smd-font-size;
+  color: $gray-50;
+  border-left: 0.5px solid #eee;
+  border-bottom: 0.5px solid #eee;
+  @include forMobile() {
+    padding: 0.5rem 0.75rem;
+    grid-column: span 2 / span 2;
+  }
+}
+
+.section__6__confirm__table__important__detail {
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25rem;
+  letter-spacing: 0.00875rem;
+  font-size: $smd-font-size;
+}
+
+.section__6__confirm__table__detail {
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.125rem;
+  font-size: $smd-font-size;
+  color: $gray-50;
+}
+
+.section__6__total__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem;
+  gap: 0.5rem;
+  background-color: #0f515d;
+  border-radius: $md-border-radius;
+  @include forMobile() {
+    padding: 0.75rem;
+  }
+}
+
+.section__6__money__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.section__6__money__list__row {
+  @include flexRowContainer();
+}
+
+.section__6__money__label {
+  font-size: $md-font-size;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 142.857% */
+  letter-spacing: 0.00875rem;
+  color: $gray-5;
+  @include forMobile() {
+    font-size: $smd-font-size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem;
+  }
+}
+
+.section__6__money {
+  margin-left: auto;
+  font-size: $lg-font-size;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem; /* 150% */
+  letter-spacing: 0.005rem;
+  color: $gray-5;
+  @include forMobile() {
+    font-size: $smd-font-size;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.125rem;
+  }
+}
+
+.section__6__total__divider {
+  height: 0.0625rem;
+  background-color: rgba(217, 217, 217, 0.2);
+}
+
+.section__6__total__amount__container {
+  @include flexRowContainer();
+}
+
+.section__6__total__amount__label {
   color: $root-white;
-  @include containedButton();
   font-style: normal;
   font-weight: 700;
-  line-height: 120%; /* 4.48rem */
-  letter-spacing: 0.075rem;
-  width: fit-content;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  line-height: 1.5rem; /* 150% */
+  letter-spacing: 0.0125rem;
+  font-size: $lg-font-size;
+  @include forMobile() {
+    font-size: $sm-font-size;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem; /* 166.667% */
+    letter-spacing: 0.0075rem;
+  }
 }
 
-.footer__mail__icon {
-  width: 1rem;
-  height: 1rem;
+.section__6__total__amount {
+  color: $root-white;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem; /* 123.077% */
+  font-size: 1.625rem;
+  margin-left: auto;
+  @include forMobile() {
+    font-size: $lg-font-size;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5rem; /* 150% */
+    letter-spacing: 0.0125rem;
+  }
+}
+
+.section__6__submit__btn {
+  @include containedButton();
+  color: $root-white;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 1.05rem */
+  width: fit-content;
+  padding: 0.875rem 2.5rem;
+  background-color: $orange-700;
+  @include forMobile() {
+    font-size: $md-font-size;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    padding: 0.75rem 1rem;
+  }
+}
+
+.section__6__error__message {
+  color: red;
+  font-size: $xsm-font-size;
+  margin-top: 0.5rem;
+  display: block;
 }
 
 // TODO: add alt for img
-// TODO: html sematic refactoring
 // TODO: flex change gap -> margin
